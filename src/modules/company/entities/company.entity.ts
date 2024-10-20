@@ -4,7 +4,6 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
-  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -19,8 +18,8 @@ export class Company {
   @JoinColumn()
   user: User;
 
-  @OneToMany(() => Product, (product) => product.company)
-  products: Product[];
+  // @OneToMany(() => Product, (product) => product.company)
+  // products: Product[];
 
   @Column({ type: 'varchar', length: 255 })
   companyName: string;

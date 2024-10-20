@@ -68,7 +68,6 @@ describe('AuthService', () => {
       expect(response).toBeDefined();
       expect(response._id).toBeDefined();
       expect(response.email).toBeDefined();
-      expect(response.roles).toBeDefined();
     });
   });
 

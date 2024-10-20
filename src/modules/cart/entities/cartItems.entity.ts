@@ -9,8 +9,8 @@ export class CartItem {
   @ManyToOne(() => Client, (client) => client.cart)
   client: Client;
 
-  @ManyToOne(() => Product, (product) => product.cartItems)
-  product: Product;
+  // @ManyToOne(() => Product, (product) => product.cartItems)
+  // product: Product;
 
   @Column({ type: 'int' })
   quantity: number;

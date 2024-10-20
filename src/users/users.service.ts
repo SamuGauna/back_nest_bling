@@ -10,8 +10,8 @@ import { ConfigService } from '@nestjs/config';
 import { Bcrypt } from 'src/bcrypt/bcrypt.provider';
 import { BCRYPT } from 'src/bcrypt/bcrypt.const';
 import { AuthService } from 'src/auth/auth.service';
-import { Emails } from '../../emails/interfaces/emails.interface';
-import { EMAIL_PROVIDER } from '../../emails/constants/emailProviders.constant';
+import { Emails } from '../emails/interfaces/emails.interface';
+import { EMAIL_PROVIDER } from '../emails/constants/emailProviders.constant';
 import { User } from './users.entity';
 import { CreateUserResponseDto } from './dto/createUserResponse.dto';
 import { CreateUserRequestDto } from './dto/createUserRequest.dto';
@@ -65,6 +65,7 @@ export class UsersService {
     const payload = {
       email: user.email,
       id: user.id,
+      firstName: user.firstName,
     };
     const token = this.authService.sign(payload);
     return token;

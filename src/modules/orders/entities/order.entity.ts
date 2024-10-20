@@ -4,7 +4,6 @@ import {
   CreateDateColumn,
   Entity,
   ManyToOne,
-  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -17,8 +16,8 @@ export class Order {
   @ManyToOne(() => Client, (client) => client.orders)
   client: Client;
 
-  @OneToMany(() => OrderItem, (orderItem) => orderItem.order)
-  items: OrderItem[];
+  // @OneToMany(() => OrderItem, (orderItem) => orderItem.order)
+  // items: OrderItem[];
 
   @Column({ type: 'varchar', length: 255 })
   status: string; // Ej. "pending", "completed"
